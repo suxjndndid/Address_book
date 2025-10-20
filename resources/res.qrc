@@ -1,9 +1,11 @@
-<qresource prefix="/photoes">
-    <file alias="002.png">resources/images/002.png</file>
-    <file alias="007.png">resources/images/007.png</file>
-    <file alias="008.png">resources/images/008.png</file>
-    <file alias="019.png">resources/images/019.png</file>
-    <file alias="035.png">resources/images/035.png</file>
-    <file alias="044.png">resources/images/044.png</file>
-    <file alias="046.png">resources/images/046.png</file>
-</qresource>
+<RCC>
+    <qresource prefix="/photoes">
+        <file alias="002.png">images/002.png</file>
+        <file alias="007.png">images/007.png</file>
+        <file alias="008.png">images/008.png</file>
+        <file alias="019.png">images/019.png</file>
+        <file alias="035.png">images/035.png</file>
+        <file alias="044.png">images/044.png</file>
+        <file alias="046.png">images/046.png</file>
+    </qresource>
+</RCC>

@@ -126,6 +126,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -222,6 +223,7 @@ Makefile: Address_book.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -301,6 +303,7 @@ Makefile: Address_book.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
@@ -368,7 +371,14 @@ compiler_rcc_make_all: build/rcc/qrc_res.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) build/rcc/qrc_res.cpp
 build/rcc/qrc_res.cpp: resources/res.qrc \
-		/usr/lib/qt5/bin/rcc
+		/usr/lib/qt5/bin/rcc \
+		resources/images/044.png \
+		resources/images/035.png \
+		resources/images/008.png \
+		resources/images/007.png \
+		resources/images/046.png \
+		resources/images/002.png \
+		resources/images/019.png
 	/usr/lib/qt5/bin/rcc -name res resources/res.qrc -o build/rcc/qrc_res.cpp
 
 compiler_moc_predefs_make_all: build/moc/moc_predefs.h
@@ -445,7 +455,9 @@ build/obj/mainwindow.o: src/ui/mainwindow.cpp src/ui/mainwindow.h \
 build/obj/page_login.o: src/ui/page_login.cpp src/ui/page_login.h \
 		src/core/contact_service.h \
 		src/core/contact.h \
-		build/ui/ui_page_login.h
+		build/ui/ui_page_login.h \
+		src/ui/mainwindow.h \
+		src/ui/page_edit.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/obj/page_login.o src/ui/page_login.cpp
 
 build/obj/page_edit.o: src/ui/page_edit.cpp src/ui/page_edit.h \

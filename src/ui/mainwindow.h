@@ -38,6 +38,10 @@ private:
     Ui::MainWindow* ui;
     page_login my_login;
     page_edit editPage; // 👈 新增，编辑页面
+
+public:
+    void showLogin();  // 显示登录页面
+
 };
 
 #endif // MAINWINDOW_H

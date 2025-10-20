@@ -1,20 +1,14 @@
-#include "mainwindow.h"
-#include "page_login.h"
-#include "page_edit.h"
-
 #include <QApplication>
 
-int main(int argc, char *argv[])
-{
+#include "ui/mainwindow.h"
+
+int main(int argc, char* argv[]) {
     QApplication a(argc, argv);
 
-    MainWindow w;
-//    w.show();
+    MainWindow w;  // 主窗口对象
+    w.hide();      // 启动时先隐藏主窗口
 
-//    page_login p;
-//    p.show();
+    w.showLogin();  // 显示登录页面
 
-    page_edit m;
-//    m.show();
     return a.exec();
 }

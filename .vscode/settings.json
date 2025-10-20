@@ -12,7 +12,10 @@
         "deque": "cpp",
         "unordered_map": "cpp",
         "vector": "cpp",
-        "system_error": "cpp"
+        "system_error": "cpp",
+        "array": "cpp",
+        "initializer_list": "cpp",
+        "span": "cpp"
     },
     "editor.tabSize": 4,
     "editor.insertSpaces": true,

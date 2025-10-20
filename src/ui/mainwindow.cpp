@@ -1,6 +1,8 @@
 #include "mainwindow.h"
+
 #include <QInputDialog>
 #include <QMessageBox>
+
 #include "../core/contact.h"
 #include "../core/contact_service.h"
 #include "ui_mainwindow.h"
@@ -22,7 +24,6 @@ MainWindow::MainWindow(QWidget* parent)
     connect(&editPage, &page_edit::saveFinished, this, &MainWindow::onEditPageSaveFinished);
 }
 
-
 MainWindow::~MainWindow() {
     delete ui;
 }
@@ -30,6 +31,14 @@ MainWindow::~MainWindow() {
 void MainWindow::login() {
     my_login.hide();
     this->show();
+    loadAllContacts();
+}
+void MainWindow::showLogin() {
+    my_login.show();  // 显示登录页面
+
+    // 连接登录成功信号
+    connect(&my_login, &page_login::sendLoginSuccess,
+            this, &MainWindow::login);
 }
 
 void MainWindow::loadAllContacts() {
@@ -94,5 +103,22 @@ void MainWindow::onEditClicked() {
 
 // 编辑完成后刷新联系人表
 void MainWindow::onEditPageSaveFinished() {
-    loadAllContacts(); // 重新加载数据库内容
+    loadAllContacts();  // 重新加载数据库内容
+}
+
+
+void MainWindow::updateTable(const QList<Contact>& contacts) {
+    ui->tableWidget->clearContents();
+    ui->tableWidget->setRowCount(contacts.size());
+
+    for (int row = 0; row < contacts.size(); ++row) {
+        const Contact &c = contacts[row];
+        ui->tableWidget->setItem(row, 0, new QTableWidgetItem(QString::number(c.id)));
+        ui->tableWidget->setItem(row, 1, new QTableWidgetItem(c.name));
+        ui->tableWidget->setItem(row, 2, new QTableWidgetItem(c.phone));
+        ui->tableWidget->setItem(row, 3, new QTableWidgetItem(c.email));
+        ui->tableWidget->setItem(row, 4, new QTableWidgetItem(c.address));
+        ui->tableWidget->setItem(row, 5, new QTableWidgetItem(c.notes));
+        ui->tableWidget->setItem(row, 6, new QTableWidgetItem(c.group_name));
+    }
 }

@@ -1,5 +1,7 @@
 #include "contact_service.h"
 #include "contact_convert.h"
+#include <QDebug>
+
 
 #define DEBUG 1   // ← 控制是否启用调试模式
 
