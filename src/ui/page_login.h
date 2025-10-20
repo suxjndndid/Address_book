@@ -7,22 +7,22 @@ namespace Ui {
 class page_login;
 }
 
-class page_login : public QWidget
-{
+class page_login : public QWidget {
     Q_OBJECT
 
-public:
-    explicit page_login(QWidget *parent = nullptr);
+   public:
+    explicit page_login(QWidget* parent = nullptr);
     ~page_login();
 
-private slots:
-    void on_pushButton_clicked();
+   private slots:
+    void onLoginClicked();
+    void onExitClicked();
 
-signals:
+   signals:
     void sendLoginSuccess();
 
-private:
-    Ui::page_login *ui;
+   private:
+    Ui::page_login* ui;
 };
 
-#endif // PAGE_LOGIN_H
+#endif  // PAGE_LOGIN_H

@@ -1,0 +1,26 @@
+{
+    "files.associations": {
+        "contact_c.h": "c",
+        "time.h": "c",
+        "string": "cpp",
+        "chrono": "cpp",
+        "functional": "cpp",
+        "random": "cpp",
+        "string_view": "cpp",
+        "list": "cpp",
+        "typeinfo": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "system_error": "cpp"
+    },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4, UseTab: Never, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: true, AllowShortLoopsOnASingleLine: true, AllowShortFunctionsOnASingleLine: All, ColumnLimit: 0 }"
+}
